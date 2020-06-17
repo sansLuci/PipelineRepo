@@ -4,6 +4,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
+      	sh 'curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py'
+      	sh 'python get-pip.py'
         sh 'pip install -r requirements.txt'
       }
     }
